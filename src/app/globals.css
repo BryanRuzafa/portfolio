@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* Dark mode por clase (.dark en <html>), controlado por el toggle + localStorage. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Tokens                                                              */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --fg: #0b1220;
+  --muted: #475569;
+  --subtle: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --accent: #0284c7; /* interacción: bordes, glow, foco */
+  --accent-deep: #1e3a8a; /* deep navy: fondos de acción */
+  --accent-text: #1e40af; /* acento legible como texto */
+  --danger: #dc2626;
+  --success: #15803d;
+  --shadow: 15 23 42;
+}
+
+.dark {
+  --bg: #090d16;
+  --surface: #0d1320;
+  --fg: #e6ebf3;
+  --muted: #94a3b8;
+  --subtle: #7c8aa0;
+  --line: #1b2436;
+  --line-strong: #283349;
+  --accent: #0ea5e9;
+  --accent-deep: #1e3a8a;
+  --accent-text: #38bdf8;
+  --danger: #f87171;
+  --success: #4ade80;
+  --shadow: 0 0 0;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-text: var(--accent-text);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base y superficies del navegador                                    */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--line-strong) transparent;
+    scrollbar-width: thin;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease;
+  }
+
+  .theme-switching *,
+  .theme-switching *::before,
+  .theme-switching *::after {
+    transition: none !important;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--accent) 28%, transparent);
+    color: var(--fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  input,
+  textarea {
+    caret-color: var(--accent);
+  }
+
+  a {
+    text-underline-offset: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--line-strong);
+    border-radius: 999px;
+    border: 3px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--subtle);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Efectos                                                             */
+/* ------------------------------------------------------------------ */
+
+/* Retícula técnica del hero, desvanecida hacia los bordes. */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--fg) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--fg) 6%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 35%, #000 25%, transparent 75%);
+}
+
+.hero-glow {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--accent-deep) 45%, transparent),
+    transparent
+  );
+}
+
+/* Marco del retrato: borde cónico que rota muy despacio. */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.portrait-ring {
+  background: conic-gradient(
+    from var(--angle),
+    var(--line) 0deg,
+    color-mix(in oklab, var(--accent) 85%, transparent) 50deg,
+    var(--line) 120deg,
+    var(--line) 200deg,
+    color-mix(in oklab, var(--accent-deep) 90%, var(--accent)) 260deg,
+    var(--line) 320deg
+  );
+  animation: rotate-angle 10s linear infinite;
+}
+
+@keyframes rotate-angle {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Tarjeta con borde "spotlight" que sigue al cursor (--x / --y se fijan en GlowCard). */
+.glow-card {
+  background-color: var(--line);
+  isolation: isolate;
+}
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    360px circle at var(--x, 50%) var(--y, 50%),
+    color-mix(in oklab, var(--accent) 70%, transparent),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.glow-card:hover::before,
+.glow-card:focus-within::before {
+  opacity: 1;
+}
+.glow-card > .glow-card-inner {
+  background-image: radial-gradient(
+    480px circle at var(--x, 50%) var(--y, 50%),
+    color-mix(in oklab, var(--accent) 5%, transparent),
+    transparent 55%
+  );
+}
+
+/* Punto activo de la línea temporal. */
+.timeline-dot-active {
+  box-shadow:
+    0 0 0 4px color-mix(in oklab, var(--accent) 18%, transparent),
+    0 2px 10px -2px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+
+/* Ecualizador de SONARIS. */
+@keyframes eq {
+  0% {
+    transform: scaleY(0.18);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq var(--d, 1.2s) cubic-bezier(0.45, 0, 0.55, 1) var(--delay, 0s) infinite alternate;
+}
+
+/* Pulso de estado "en curso". */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Destello que cruza la tarjeta al pasar el ratón (certificaciones). */
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    color-mix(in oklab, var(--accent) 16%, transparent) 50%,
+    transparent 65%
+  );
+  transform: translateX(-110%);
+  transition: transform 0s;
+}
+.sheen:hover::after {
+  transform: translateX(110%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,6 @@
+# Política de divulgación responsable de bryanrg.dev
+# Si encuentras una vulnerabilidad, escríbeme antes de publicarla. Gracias.
+Contact: mailto:bryan@bryanrg.dev
+Expires: 2027-10-09T00:00:00.000Z
+Preferred-Languages: es, ca, en
+Canonical: https://bryanrg.dev/.well-known/security.txt

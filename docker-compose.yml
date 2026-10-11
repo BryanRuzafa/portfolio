@@ -1,0 +1,17 @@
+# En el servidor: crea .env con RESEND_API_KEY, CONTACT_TO_EMAIL y CONTACT_FROM_EMAIL, y luego
+#   docker compose up -d --build
+# Solo escucha en 127.0.0.1: el nginx del servidor hace de proxy con HTTPS.
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "127.0.0.1:3000:3000"
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.next/cache
+    security_opt:
+      - no-new-privileges:true
