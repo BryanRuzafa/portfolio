@@ -30,7 +30,7 @@ export function Hero() {
     <section
       id="inicio"
       aria-label={siteConfig.name}
-      className="relative isolate z-10 flex min-h-[100svh] items-center overflow-x-clip pt-28 pb-24"
+      className="relative isolate z-10 flex min-h-[100svh] items-start md:items-center overflow-x-clip pt-28 pb-24"
     >
       {/* Fondo: retícula técnica + halo navy muy tenue */}
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 -z-10" />
@@ -68,7 +68,7 @@ export function Hero() {
           </h1>
 
           <motion.p variants={fadeUp} className="mt-6 text-lg font-medium text-fg/90 md:text-xl">
-            <ScrambleText text={t.hero.role} delay={650} />
+            <ScrambleText text={t.hero.role} delay={0} duration={450} />
           </motion.p>
 
           <motion.p variants={fadeUp} className="mt-4 max-w-xl text-base leading-relaxed text-pretty text-muted md:text-lg">
@@ -97,7 +97,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2, ease: EASE_OUT_EXPO, delay: 0.3 }}
-          className="order-first md:order-none"
+          className="mx-auto w-[180px] sm:w-auto"
         >
           <Portrait alt={t.hero.photoAlt} badge={t.hero.badge} />
         </motion.div>

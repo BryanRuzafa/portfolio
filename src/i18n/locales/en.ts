@@ -120,12 +120,12 @@ export const en: Dictionary = {
     intro: "The tools I use to build, ship and secure applications.",
     groups: [
       { key: "frontend", title: "Frontend", items: ["Vue 3", "Nuxt", "Pinia", "React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-      { key: "backend", title: "Backend & APIs", items: ["NestJS", "Laravel", "Node.js", "Express", "Socket.IO", "PHP", "Java (OOP)", "REST APIs", "WebSockets"] },
+      { key: "backend", title: "Backend & APIs", items: ["NestJS", "Laravel", "Node.js", "Express", "Socket.IO", "PHP", "REST APIs", "WebSockets"] },
       { key: "data", title: "Databases", items: ["PostgreSQL", "MariaDB / MySQL", "Prisma", "TypeORM", "Relational optimization"] },
       {
         key: "devops",
         title: "DevOps, Systems & Security",
-        items: ["Docker", "Docker Compose", "Linux", "Windows", "LAN networking", "Git", "GitHub", "Scrum", "OWASP", "Hardening", "Nginx", "nftables", "CrowdSec", "WireGuard / Tailscale", "Cloudflare", "Encrypted backups (restic)", "Monitoring (Uptime Kuma)", "Automation (n8n)"],
+        items: ["Docker", "Docker Compose", "Linux", "Windows", "LAN networking", "Git", "GitHub", "Scrum", "OWASP", "Hardening", "Nginx", "nftables", "CrowdSec", "Tailscale (WireGuard)", "Cloudflare", "Encrypted backups (restic)", "Monitoring (Uptime Kuma)", "Automation (n8n)"],
       },
     ],
     certsTitle: "Certifications",

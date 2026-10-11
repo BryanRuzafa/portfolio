@@ -120,12 +120,12 @@ export const ca: Dictionary = {
     intro: "Eines amb què construeixo, desplego i asseguro aplicacions.",
     groups: [
       { key: "frontend", title: "Frontend", items: ["Vue 3", "Nuxt", "Pinia", "React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-      { key: "backend", title: "Backend & APIs", items: ["NestJS", "Laravel", "Node.js", "Express", "Socket.IO", "PHP", "Java (POO)", "REST APIs", "WebSockets"] },
+      { key: "backend", title: "Backend & APIs", items: ["NestJS", "Laravel", "Node.js", "Express", "Socket.IO", "PHP", "REST APIs", "WebSockets"] },
       { key: "data", title: "Bases de dades", items: ["PostgreSQL", "MariaDB / MySQL", "Prisma", "TypeORM", "Optimització relacional"] },
       {
         key: "devops",
         title: "DevOps, Sistemes & Seguretat",
-        items: ["Docker", "Docker Compose", "Linux", "Windows", "Xarxes LAN", "Git", "GitHub", "Scrum", "OWASP", "Hardening", "Nginx", "nftables", "CrowdSec", "WireGuard / Tailscale", "Cloudflare", "Còpies xifrades (restic)", "Monitorització (Uptime Kuma)", "Automatització (n8n)"],
+        items: ["Docker", "Docker Compose", "Linux", "Windows", "Xarxes LAN", "Git", "GitHub", "Scrum", "OWASP", "Hardening", "Nginx", "nftables", "CrowdSec", "Tailscale (WireGuard)", "Cloudflare", "Còpies xifrades (restic)", "Monitorització (Uptime Kuma)", "Automatització (n8n)"],
       },
     ],
     certsTitle: "Certificacions",

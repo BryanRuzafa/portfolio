@@ -56,7 +56,7 @@ export const projects: readonly Project[] = [
   {
     id: "homelab",
     name: "HOMELAB",
-    stack: ["Debian Linux", "Docker Compose", "WireGuard / Tailscale", "nftables", "CrowdSec", "Cloudflare", "Nginx", "Let's Encrypt", "restic + Google Drive", "Uptime Kuma", "n8n", "WAHA (WhatsApp)", "Whisper", "Vaultwarden", "AdGuard Home", "Python", "Web Crypto API", "systemd"],
+    stack: ["Debian Linux", "Docker Compose", "Tailscale (WireGuard)", "nftables", "CrowdSec", "Cloudflare", "Nginx", "Let's Encrypt", "restic + Google Drive", "Uptime Kuma", "n8n", "WAHA (WhatsApp)", "Whisper", "Vaultwarden", "AdGuard Home", "Python", "Web Crypto API", "systemd"],
     visual: "server",
     featured: true,
     flip: true,

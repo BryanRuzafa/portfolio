@@ -120,12 +120,12 @@ export const es: Dictionary = {
     intro: "Herramientas con las que construyo, despliego y aseguro aplicaciones.",
     groups: [
       { key: "frontend", title: "Frontend", items: ["Vue 3", "Nuxt", "Pinia", "React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-      { key: "backend", title: "Backend & APIs", items: ["NestJS", "Laravel", "Node.js", "Express", "Socket.IO", "PHP", "Java (POO)", "REST APIs", "WebSockets"] },
+      { key: "backend", title: "Backend & APIs", items: ["NestJS", "Laravel", "Node.js", "Express", "Socket.IO", "PHP", "REST APIs", "WebSockets"] },
       { key: "data", title: "Bases de datos", items: ["PostgreSQL", "MariaDB / MySQL", "Prisma", "TypeORM", "Optimización relacional"] },
       {
         key: "devops",
         title: "DevOps, Sistemas & Seguridad",
-        items: ["Docker", "Docker Compose", "Linux", "Windows", "Redes LAN", "Git", "GitHub", "Scrum", "OWASP", "Hardening", "Nginx", "nftables", "CrowdSec", "WireGuard / Tailscale", "Cloudflare", "Copias cifradas (restic)", "Monitorización (Uptime Kuma)", "Automatización (n8n)"],
+        items: ["Docker", "Docker Compose", "Linux", "Windows", "Redes LAN", "Git", "GitHub", "Scrum", "OWASP", "Hardening", "Nginx", "nftables", "CrowdSec", "Tailscale (WireGuard)", "Cloudflare", "Copias cifradas (restic)", "Monitorización (Uptime Kuma)", "Automatización (n8n)"],
       },
     ],
     certsTitle: "Certificaciones",

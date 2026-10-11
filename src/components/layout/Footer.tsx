@@ -20,7 +20,7 @@ export function Footer() {
           <p className="text-xs text-subtle">{t.footer.credits}</p>
         </div>
 
-        <div className="flex items-center gap-5 text-sm">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
           <a
             href={siteConfig.links.github}
             target="_blank"
