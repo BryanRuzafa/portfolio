@@ -114,6 +114,7 @@ export interface Dictionary {
     role: string;
     stack: string;
     code: string;
+    siteCode: string;
     demo: string;
     details: string;
     close: string;

@@ -140,6 +140,7 @@ export const es: Dictionary = {
     role: "Mi rol",
     stack: "Stack",
     code: "Código",
+    siteCode: "Código de esta web",
     demo: "Demo",
     details: "Ver detalles",
     close: "Cerrar",
@@ -207,6 +208,10 @@ export const es: Dictionary = {
           {
             title: "Esta web, blindada",
             body: "A+ en SSL Labs y securityheaders.com: CSP estricta con nonce por petición, HSTS con preload, TLS 1.2+ con intercambio de claves post-cuántico y security.txt (RFC 9116).",
+          },
+          {
+            title: "Código abierto y saneado",
+            body: "La configuración del servidor y el código de esta web son públicos en GitHub, sin IPs, secretos ni datos: compose de cada servicio, reglas del firewall, CrowdSec, scripts de copias y las dos aplicaciones. La seguridad está en las claves, no en esconder el código.",
           },
           {
             title: "Qué me ha enseñado",

@@ -20,6 +20,8 @@ export interface Project {
   visual: ProjectVisualKind;
   /** Repositorio de GitHub. Si es undefined, el botón no se muestra. */
   repo?: string;
+  /** Segundo repositorio relacionado (p. ej. el código de esta web). */
+  siteRepo?: string;
   /** Demo pública desplegada. Si es undefined, el botón no se muestra. */
   demo?: string;
   /** Vídeo loop (mp4/webm en /public/projects/). Sustituye a la ilustración. */
@@ -58,7 +60,9 @@ export const projects: readonly Project[] = [
     visual: "server",
     featured: true,
     flip: true,
-    // Infraestructura personal en producción: sin repositorio público ni demo por seguridad.
+    // Repos públicos saneados: sin IPs, secretos ni datos. Sin demo: los servicios son privados.
+    repo: `${gh}/homelab`,
+    siteRepo: `${gh}/portfolio`,
   },
   {
     id: "sonaris",

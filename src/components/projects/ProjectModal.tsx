@@ -146,6 +146,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {t.projects.code}
                 </a>
               ) : null}
+              {project.siteRepo ? (
+                <a href={project.siteRepo} target="_blank" rel="noopener noreferrer" className={buttonStyles.secondary}>
+                  <GithubIcon className="size-4" />
+                  {t.projects.siteCode}
+                </a>
+              ) : null}
               {project.demo ? (
                 <a href={project.demo} target="_blank" rel="noopener noreferrer" className={buttonStyles.primary}>
                   <ExternalLink className="size-4" strokeWidth={1.75} aria-hidden />

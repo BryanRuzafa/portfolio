@@ -140,6 +140,7 @@ export const en: Dictionary = {
     role: "My role",
     stack: "Stack",
     code: "Code",
+    siteCode: "Site code",
     demo: "Demo",
     details: "View details",
     close: "Close",
@@ -207,6 +208,10 @@ export const en: Dictionary = {
           {
             title: "This site, hardened",
             body: "A+ on SSL Labs and securityheaders.com: strict CSP with a per-request nonce, HSTS with preload, TLS 1.2+ with post-quantum key exchange, and security.txt (RFC 9116).",
+          },
+          {
+            title: "Open source, sanitised",
+            body: "The server configuration and this site's code are public on GitHub, with no IPs, secrets or data: each service's compose file, firewall rules, CrowdSec, backup scripts and both apps. The security lives in the keys, not in hiding the code.",
           },
           {
             title: "What it taught me",

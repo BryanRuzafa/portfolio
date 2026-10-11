@@ -140,6 +140,7 @@ export const ca: Dictionary = {
     role: "El meu rol",
     stack: "Stack",
     code: "Codi",
+    siteCode: "Codi d'aquesta web",
     demo: "Demo",
     details: "Veure detalls",
     close: "Tanca",
@@ -207,6 +208,10 @@ export const ca: Dictionary = {
           {
             title: "Aquesta web, blindada",
             body: "A+ a SSL Labs i securityheaders.com: CSP estricta amb nonce per petició, HSTS amb preload, TLS 1.2+ amb intercanvi de claus postquàntic i security.txt (RFC 9116).",
+          },
+          {
+            title: "Codi obert i sanejat",
+            body: "La configuració del servidor i el codi d'aquesta web són públics a GitHub, sense IPs, secrets ni dades: compose de cada servei, regles del tallafoc, CrowdSec, scripts de còpies i les dues aplicacions. La seguretat és a les claus, no a amagar el codi.",
           },
           {
             title: "Què m'ha ensenyat",

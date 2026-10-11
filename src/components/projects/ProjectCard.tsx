@@ -92,6 +92,18 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
                 {t.projects.code}
               </motion.a>
             ) : null}
+            {project.siteRepo ? (
+              <motion.a
+                href={project.siteRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...pressable}
+                className={buttonStyles.ghost}
+              >
+                <GithubIcon className="size-3.5" />
+                {t.projects.siteCode}
+              </motion.a>
+            ) : null}
             {project.demo ? (
               <motion.a
                 href={project.demo}
